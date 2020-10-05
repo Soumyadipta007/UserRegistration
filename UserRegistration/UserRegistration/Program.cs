@@ -23,7 +23,12 @@ namespace UserRegistration
                 Console.WriteLine("Valid Last Name");
             else
                 Console.WriteLine("InValid Last Name");
-
+            Console.WriteLine("Enter Email");
+            string email = Console.ReadLine();
+            if (regexClass.validateEmail(email))
+                Console.WriteLine("Valid Email");
+            else
+                Console.WriteLine("InValid Email");
         }
     }
 }
