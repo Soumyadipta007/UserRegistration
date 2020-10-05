@@ -35,6 +35,12 @@ namespace UserRegistration
                 Console.WriteLine("Valid Mobile Number");
             else
                 Console.WriteLine("InValid Mobile Number");
+            Console.WriteLine("Enter Password");
+            string pasword = Console.ReadLine();
+            if (regexClass.validatePassword(pasword))
+                Console.WriteLine("Valid Password");
+            else
+                Console.WriteLine("Invalid Password");
         }
     }
 }
