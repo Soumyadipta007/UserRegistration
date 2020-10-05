@@ -10,14 +10,20 @@ namespace UserRegistration
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Name");
-            string name = Console.ReadLine();
+            Console.WriteLine("Enter First Name");
+            string firstName = Console.ReadLine();
             RegexClass regexClass = new RegexClass();
-            if (regexClass.validateFirstName(name))
+            if (regexClass.validateFirstName(firstName))
                 Console.WriteLine("Valid First Name");
             else
                 Console.WriteLine("InValid First Name");
-            
+            Console.WriteLine("Enter Last Name");
+            string lastName = Console.ReadLine();
+            if (regexClass.validateLastName(lastName))
+                Console.WriteLine("Valid Last Name");
+            else
+                Console.WriteLine("InValid Last Name");
+
         }
     }
 }

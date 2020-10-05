@@ -7,10 +7,15 @@ namespace UserRegistration
 {
     class RegexClass
     {
-        public static string NAMEREGEX = "^[A-Z]{1}[A-Za-z]{2,}$";
+        public static string FIRSTNAMEREGEX = "^[A-Z]{1}[A-Za-z]{2,}$";
+        public static string LASTNAMEREGEX = "^[A-Z]{1}[A-Za-z]{2,}$";
         public bool validateFirstName(string name)
         {
-            return Regex.IsMatch(name, NAMEREGEX);
+            return Regex.IsMatch(name, FIRSTNAMEREGEX);
+        }
+        public bool validateLastName(string name)
+        {
+            return Regex.IsMatch(name, LASTNAMEREGEX);
         }
     }
 }
