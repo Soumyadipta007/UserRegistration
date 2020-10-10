@@ -7,6 +7,10 @@ namespace UserRegistration
     public class UserRegister
     {
         private string message;
+        RegexClass regexClass = new RegexClass();
+        public UserRegister()
+        {
+        }
         public UserRegister(string message)
         {
             this.message = message;
@@ -42,6 +46,15 @@ namespace UserRegistration
         public string checkPassword()
         {
             if (this.message.Contains("Happy"))
+                return "Entry Successfull";
+            else
+                return "Entry UnSuccessfull";
+        }
+        public string checkmultipleEmails(string email1,string email2)
+        {
+            bool ans1 = regexClass.validateEmail(email1);
+            bool ans2 = regexClass.validateEmail(email2);
+            if(ans1 && ans2)
                 return "Entry Successfull";
             else
                 return "Entry UnSuccessfull";

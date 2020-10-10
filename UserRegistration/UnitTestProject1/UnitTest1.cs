@@ -115,5 +115,15 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual("Entry UnSuccessfull", result);
         }
+        [TestMethod]
+        public void GivenMultipleEmailsCheckIfSuccessful()
+        {
+            //Arrange
+            UserRegister userRegister = new UserRegister();
+            //Act
+            var result = userRegister.checkmultipleEmails("abc@gmail.com","abc123@gmail.com");
+            //Assert
+            Assert.AreEqual("Entry Successfull", result);
+        }
     }
 }
