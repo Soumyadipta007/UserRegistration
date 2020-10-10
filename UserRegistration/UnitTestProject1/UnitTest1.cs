@@ -125,5 +125,90 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual("Entry Successfull", result);
         }
+        [TestMethod]
+        [DataRow("soumya")]
+        public void GivenFirstNameThrowInvalidFirstNameExceptionIfInvalid(string fname)
+        {
+            try
+            {
+                //Arrange
+                UserRegister userRegister = new UserRegister();
+                //Act
+                userRegister.checkFirstName(fname);
+            }
+            catch (UserRegistrationException e)
+            {
+                //Assert
+                Assert.AreEqual("First Name is Invalid", e.Message);
+            }
+        }
+        [TestMethod]
+        [DataRow("banerjee")]
+        public void GivenLastNameThrowInvalidLastNameExceptionIfInvalid(string lname)
+        {
+            try
+            {
+                //Arrange
+                UserRegister userRegister = new UserRegister();
+                //Act
+                userRegister.checkLastName(lname);
+            }
+            catch (UserRegistrationException e)
+            {
+                //Assert
+                Assert.AreEqual("Last Name is Invalid", e.Message);
+            }
+        }
+        [TestMethod]
+        [DataRow("abc@gmail.123")]
+        public void GivenEmailThrowInvalidEmailExceptionIfInvalid(string email)
+        {
+            try
+            {
+                //Arrange
+                UserRegister userRegister = new UserRegister();
+                //Act
+                userRegister.checkEmail(email);
+            }
+            catch (UserRegistrationException e)
+            {
+                //Assert
+                Assert.AreEqual("Email is Invalid", e.Message);
+            }
+        }
+        [TestMethod]
+        [DataRow("91 95ab111111")]
+        public void GivenMobileNumberThrowInvalidMobileNumberExceptionIfInvalid(string mobNumber)
+        {
+            try
+            {
+                //Arrange
+                UserRegister userRegister = new UserRegister();
+                //Act
+                userRegister.checkMobileNumber(mobNumber);
+            }
+            catch (UserRegistrationException e)
+            {
+                //Assert
+                Assert.AreEqual("Mobile number is Invalid", e.Message);
+            }
+        }
+        [TestMethod]
+        [DataRow("abcdefgh")]
+        public void GivenPasswordThrowInvalidPasswordExceptionIfInvalid(string password)
+        {
+            try
+            {
+                //Arrange
+                UserRegister userRegister = new UserRegister();
+                //Act
+                userRegister.checkPassword(password);
+            }
+            catch (UserRegistrationException e)
+            {
+                //Assert
+                Assert.AreEqual("Password is Invalid", e.Message);
+            }
+        }
     }
 }

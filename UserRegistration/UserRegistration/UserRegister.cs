@@ -59,5 +59,40 @@ namespace UserRegistration
             else
                 return "Entry UnSuccessfull";
         }
+        public void checkFirstName(string firstName)
+        {
+            if (regexClass.validateFirstName(firstName))
+                Console.WriteLine("Valid First Name");
+            else
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_FIRSTNAME, "First Name is Invalid");
+        }
+        public void checkLastName(string lastName)
+        {
+            if (regexClass.validateLastName(lastName))
+                Console.WriteLine("Valid Last Name");
+            else
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_LASTNAME, "Last Name is Invalid");
+        }
+        public void checkEmail(string email)
+        {
+            if (regexClass.validateEmail(email))
+                Console.WriteLine("Valid Email");
+            else
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "Email is Invalid");
+        }
+        public void checkMobileNumber(string mobileNumber)
+        {
+            if (regexClass.validateMobileNumber(mobileNumber))
+                Console.WriteLine("Valid Mobile Number");
+            else
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_MOBILENUMBER, "Mobile number is Invalid");
+        }
+        public void checkPassword(string password)
+        {
+            if (regexClass.validatePassword(password))
+                Console.WriteLine("Valid Password");
+            else
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+        }
     }
 }
