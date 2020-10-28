@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistration
 {
-    class RegexClass
+    public class RegexClass
     {
         public static string FIRSTNAMEREGEX = "^[A-Z]{1}[A-Za-z]{2,}$";
         public static string LASTNAMEREGEX = "^[A-Z]{1}[A-Za-z]{2,}$";
@@ -35,5 +35,10 @@ namespace UserRegistration
             bool valid2 = Regex.IsMatch(password, PASSWORDREGEX2);
             return valid1 && valid2;
         }
+        public Func<string, bool> isValidFirstName = fName => Regex.IsMatch(fName, FIRSTNAMEREGEX);
+        public Func<string, bool> isValidLastName = lName => Regex.IsMatch(lName, LASTNAMEREGEX);
+        public Func<string, bool> isValidEmail = email => Regex.IsMatch(email, EMAILREGEX);
+        public Func<string, bool> isValidMobileNumber = mobNumber => Regex.IsMatch(mobNumber, MOBILENUMBERREGEX);
+        public Func<string, bool> isValidPassword = password => Regex.IsMatch(password, PASSWORDREGEX) && Regex.IsMatch(password, PASSWORDREGEX2);
     }
 }
